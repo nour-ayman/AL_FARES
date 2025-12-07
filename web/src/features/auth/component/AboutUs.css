@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,900&display=swap');
+
+        /* Reset and Base Styles */
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+        .about-us-container {
+          font-family: 'Roboto', sans-serif; /* close match to the clean sans-serif used */
+          width: 100%;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+        }
+
+        /* Header Section */
+        header {
+          background-color: rgb(255, 255, 255);
+          padding: 20px 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          /* Optional: Add a subtle shadow or border if desired, though image looks clean */
+        }
+
+        .logo {
+        font-family: 'Fugaz One', sans-serif;
+        font-size: 32px;
+        font-weight: 900; /* Extra bold */
+        font-style: italic;
+        color: #0B1C30; /* Dark Navy Blue extracted from image */
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        }
+
+
+        .login-btn {
+          background: transparent;
+          border: 2px solid #333;
+          padding: 8px 30px;
+          border-radius: 20px; /* Rounded pill shape */
+          font-size: 14px;
+          font-weight: 500;
+          cursor: pointer;
+          color: #333;
+          transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+          background-color: #99cf66;
+        }
+
+        /* Main Content Section */
+        .main-content {
+          /* Replace # with your real image path */
+          background-image: url('D:/y3-s1/csci-313 (software)/Git/Project/AL-FARES/features/auth/auth/frontend/src/assets/aboutUsBG.png'); 
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          flex: 1; /* Takes up remaining height */
+          display: flex;
+          flex-direction: column;
+          justify-content: center; /* Vertically centers the content block */
+          padding-left: 8%; /* Indentation from the left */
+          padding-right: 20px;
+          color: rgb(231, 231, 231);
+          position: relative;
+        }
+
+        /* Dark overlay to ensure text readability if the image is too bright 
+           (The reference image is naturally dark, but this helps) */
+        .main-content::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+          z-index: 1;
+        }
+
+        /* Wrapper to lift text above the overlay */
+        .content-wrapper {
+          position: relative;
+          z-index: 2;
+          max-width: 900px; /* Limits width to match the visual reference */
+        }
+
+        h1 {
+          font-size: 48px;
+          font-weight: 400; /* Regular weight, not bold */
+          margin-bottom: 75px;
+        }
+
+        p {
+          font-size: 20px;
+          line-height: 1.5;
+          margin-bottom: 5px; /* Minimal space between paragraphs to look like one block */
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+          header {
+            padding: 15px 20px;
+          }
+          
+          .main-content {
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+
+          h1 {
+            font-size: 32px;
+          }
+
+          p {
+            font-size: 16px;
+          }
+        }
