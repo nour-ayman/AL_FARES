@@ -6,7 +6,9 @@ const AboutUs = () => {
   return (
     <div className="about-us-container">
       <header>
-        <div className="logo">AL FARES</div>
+        <div className="logo">
+            <img src="/ALFARES_logo.png" alt="Al Fares Logo" />
+        </div>
 
       <Link to="/">
         <button className="login-btn">LOGIN</button>
