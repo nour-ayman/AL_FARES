@@ -26,13 +26,15 @@
         }
 
         .logo {
-        font-family: 'Fugaz One', sans-serif;
-        font-size: 32px;
-        font-weight: 900; /* Extra bold */
-        font-style: italic;
-        color: #0B1C30; /* Dark Navy Blue extracted from image */
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
+
+/* Add this new rule to control the image size */
+        .logo img {
+        height: 70px; /* Adjust this number to make the logo bigger or smaller */
+        width: auto;  /* Keeps the aspect ratio correct */
+        object-fit: contain;
         }
 
 
