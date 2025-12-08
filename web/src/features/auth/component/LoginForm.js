@@ -1,6 +1,7 @@
 import './LoginForm.css';
 import { Link } from 'react-router-dom';
 import useLoginForm from '../hooks/useLoginForm'; // adjust path if needed
+import { AiFillHome } from "react-icons/ai";
 
 const LoginForm = () => {
     const { userRef, errRef, user, setUser, pwd, setPwd, errMsg, success, handleSubmit } = useLoginForm();
@@ -11,8 +12,14 @@ const LoginForm = () => {
                 <section>
                     <h1>You are logged in!</h1>
                     <br />
-                    <p>
+                    {/* <p>
                         <Link to="HomePage">Go to Home</Link>
+                    </p> */}
+
+                    <p>
+                        <Link to="HomePage" style={{ fontSize: "2rem", display: 'flex', justifyContent: 'center' }}>
+                        <AiFillHome />
+                        </Link>
                     </p>
                 </section>
             ) : (
