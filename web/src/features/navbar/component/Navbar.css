@@ -1,0 +1,39 @@
+/* Container for the whole navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Pushes content to edges (Left/Right) */
+  align-items: center;            /* Vertically centers items */
+  background-color: white;
+  padding: 10px 40px;             /* Vertical padding 10px, Horizontal 40px */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+  position: sticky;               /* Optional: sticks to top on scroll */
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo Styling */
+.navbar-logo {
+  height: 50px;       /* Adjust based on your logo's aspect ratio */
+  width: auto;        /* Keeps the image from distorting */
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* Right side container */
+.navbar-links {
+  display: flex;
+  gap: 25px;          /* Space between the Home and Cart icons */
+}
+
+/* Individual Icon Links */
+.nav-icon-link {
+  color: #333333 !important;       /* Dark grey for icons */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.nav-icon-link:hover {
+  color: #007bff !important;     /* Change to your brand color on hover */
+}
