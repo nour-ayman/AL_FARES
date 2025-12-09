@@ -12,7 +12,7 @@ test('renders initial entry page (Login)', () => {
   // 3. Check if we found at least one "Login" element
   expect(loginElements.length).toBeGreaterThan(0);
 });
-
+//--------------------------------------------//
 // el comment da lel team el maaya
 //--------------------------------------------//
 // do we test the login only?
