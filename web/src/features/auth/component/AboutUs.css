@@ -55,9 +55,8 @@
         }
 
         /* Main Content Section */
-        .main-content {
-          /* Replace # with your real image path */
-          background-image: url('D:/y3-s1/csci-313 (software)/Git/Project/AL-FARES/features/auth/auth/frontend/src/assets/aboutUsBG.png'); 
+        .main-content { 
+          background-image: url('../../../assets/aboutUsBG.png');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
