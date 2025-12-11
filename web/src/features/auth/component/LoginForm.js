@@ -17,7 +17,7 @@ const LoginForm = () => {
                     </p> */}
 
                     <p>
-                        <Link to="HomePage" style={{ fontSize: "2rem", display: 'flex', justifyContent: 'center' }}>
+                        <Link to="/home" style={{ fontSize: "2rem", display: 'flex', justifyContent: 'center' }}>
                         <AiFillHome />
                         </Link>
                     </p>
