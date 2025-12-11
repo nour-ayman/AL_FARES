@@ -6,6 +6,7 @@ import Navbar from './features/navbar/component/Navbar';
 import LoginForm from './features/auth/component/LoginForm';
 import AboutUs from './features/auth/component/AboutUs';
 import Home from './features/home/component/Home'; // <--- Import the new Home page
+import TextbooksPage from './features/products/textbooks/TextbooksPage'; // <--- Added Textbooks Page
 
 function App() {
   return (
@@ -16,26 +17,35 @@ function App() {
       <Routes>
         {/* 1. The Landing Page (Login) */}
         <Route path="/" element={<LoginForm />} />
-        
+
         {/* 2. The About Us Page */}
         <Route path="/AboutUs" element={<AboutUs />} />
-        
+
         {/* 3. The Main Home Page (Where your Category Cards are) */}
         <Route path="/home" element={<Home />} />
 
-        {/* 4. Placeholder Pages for Categories 
-            (These match the paths in your CategorySection.js) */}
+        {/* 4. Category Pages */}
         <Route 
           path="/textbooks" 
-          element={<div style={{padding: '100px', textAlign: 'center'}}><h1>📚 Textbooks Page (Coming Soon)</h1></div>} 
+          element={<TextbooksPage />} 
         />
+
         <Route 
           path="/bags" 
-          element={<div style={{padding: '100px', textAlign: 'center'}}><h1>🎒 Bags Page (Coming Soon)</h1></div>} 
+          element={
+            <div style={{padding: '100px', textAlign: 'center'}}>
+              <h1>🎒 Bags Page (Coming Soon)</h1>
+            </div>
+          } 
         />
+
         <Route 
           path="/tools" 
-          element={<div style={{padding: '100px', textAlign: 'center'}}><h1>📐 Tools Page (Coming Soon)</h1></div>} 
+          element={
+            <div style={{padding: '100px', textAlign: 'center'}}>
+              <h1>📐 Tools Page (Coming Soon)</h1>
+            </div>
+          } 
         />
       </Routes>
     </Router>
