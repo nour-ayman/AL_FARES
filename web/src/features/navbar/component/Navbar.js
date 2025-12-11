@@ -14,7 +14,7 @@ const Navbar = () => {
     <nav className="navbar">
       {/* Left Side: Logo */}
       <div className="navbar-logo-container">
-        <Link to="HomePage">
+        <Link to="Home">
           <img 
             src="/ALFARES_logo.png" 
             alt="Al Fares Logo" 
@@ -25,7 +25,7 @@ const Navbar = () => {
 
       {/* Right Side: Navigation Icons */}
       <div className="navbar-links">
-        <Link to="HomePage" className="nav-icon-link" aria-label="Home">
+        <Link to="Home" className="nav-icon-link" aria-label="Home">
           <FaHome size={24} />
         </Link>
         

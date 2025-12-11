@@ -1,0 +1,27 @@
+.home-container {
+  /* CHANGE THIS: 100% prevents the scrollbar bug */
+  width: 100%;       
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  
+  /* Background */
+  background-image: url('../../../assets/retro-wave-bg.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* THE FIX: This command forcefully cuts off side scrolling */
+  overflow-x: hidden; 
+  
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
