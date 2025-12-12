@@ -1,7 +1,8 @@
 import React from "react";
 import "./textbookspage.css";
 import textbooksData from "./textbooksData";
-import ProductCard from "./component/ProductCard";
+import ProductCard from "../components/ProductCard";
+
 
 const TextbooksPage = () => {
   return (

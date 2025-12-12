@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./productcard.css";
 // 1. Import the hook so we can talk to the Cart
-import { useCart } from "../../../cart/hooks/useCart";
+import { useCart } from "../../cart/hooks/useCart";
+
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart(); // Get the function

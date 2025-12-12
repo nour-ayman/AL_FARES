@@ -1,42 +1,42 @@
 /* 1. Import the Retro Font */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-.products-container {
+.bags-container {
   width: 100%;
   min-height: 100vh;
   padding: 50px 20px;
-  /* You can keep this gradient, or switch to the retro-wave-bg.png if you want! */
-  background: linear-gradient(135deg, #2c3e50, #9595b3);
+  background: linear-gradient(135deg, #d35400, #e9b18c);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* 👇 THIS IS THE NEW RETRO TITLE STYLE */
-.page-title {
+/* 👇 NEW RETRO TITLE STYLE */
+.bags-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 2rem; /* Reduced size because this font is wide */
-  font-weight: 400; /* Retro font is already bold */
+  font-size: 2rem; 
+  font-weight: 400;
   text-align: center;
   margin-bottom: 50px;
   line-height: 1.5;
-  
+
   /* The "Sticker" Effect */
   color: #ffffff;                 /* Fill: White */
   -webkit-text-stroke: 2px black; /* Stroke: Black */
   text-shadow: 6px 6px 0px #000;  /* Hard Retro Shadow */
   
-  text-transform: uppercase;      /* Looks better in arcade font */
+  text-transform: uppercase;
   
   /* Entrance Animation */
   animation: floatIn 0.8s ease-out;
 }
 
-.products-grid {
+.bags-grid {
   width: 100%;
   max-width: 1200px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* Adjusted for wider cards */
+  /* Increased min-width slightly to 260px to fit retro cards better */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 35px;
 }
 
