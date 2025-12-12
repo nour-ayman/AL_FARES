@@ -1,18 +1,26 @@
+/* 1. Import Font (Just in case) */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .product-card {
-  width: 240px;
+  width: 260px; /* Made slightly wider for the retro font */
   padding: 18px;
   border: 3px solid #1a1a1a;
-  border-radius: 20px;
+  border-radius: 0px; /* 80s style = Square corners! */
   background: #ffffff;
   text-align: center;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.2s ease;
+  
+  /* Retro Hard Shadow */
   box-shadow: 6px 6px 0px #1a1a1a;
+  
+  /* Apply the Font */
+  font-family: 'Press Start 2P', cursive;
 }
 
 .product-card:hover {
-  transform: translate(-5px, -5px);
-  box-shadow: 10px 10px 0px #1a1a1a;
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0px #1a1a1a;
   background: #fff7d1;
 }
 
@@ -22,47 +30,66 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eee; /* Divider line */
 }
 
 .product-img {
-  max-width: 160px;
-  max-height: 160px;
+  max-width: 140px;
+  max-height: 140px;
   object-fit: contain;
 }
 
 .product-name {
-  font-size: 19px;
-  font-weight: 700;
-  margin-top: 12px;
-  margin-bottom: 6px;
+  /* Font size reduced because 19px is too huge for this font */
+  font-size: 0.8rem; 
+  line-height: 1.5;
+  font-weight: 400; /* This font doesn't need bold */
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: #1a1a1a;
+  height: 40px; /* Fixed height so cards stay aligned */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .price {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 12px;
+  font-size: 0.9rem; /* Approx 14px */
+  margin-bottom: 15px;
   color: #005bbb;
+  text-shadow: 1px 1px 0px #eee;
 }
 
 .add-btn {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 3px solid #1a1a1a;
   background: #ffd54f;
-  border-radius: 12px;
-  font-weight: bold;
+  border-radius: 0px; /* Square button */
+  font-family: 'Press Start 2P', cursive; /* Important for button text */
+  font-size: 0.7rem; /* Smaller text for button */
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.1s;
+  box-shadow: 2px 2px 0px #1a1a1a;
 }
 
 .add-btn:hover {
   background: #ffca28;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #1a1a1a;
 }
 
+.add-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #1a1a1a;
+}
+
+/* Success State (Green) */
 .add-btn.added {
-  background-color: #27ae60; /* Green color for success */
+  background-color: #27ae60; 
   color: white;
-  border-color: #27ae60;
-  transform: scale(0.95); /* Slight click effect */
+  border-color: #1a1a1a;
+  transform: none;
+  box-shadow: 2px 2px 0px #1a1a1a;
 }

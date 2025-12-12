@@ -1,25 +1,47 @@
+/* 1. Import the Retro Font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .tools-container {
   width: 100%;
   min-height: 100vh;
   padding: 50px 20px;
-  background: linear-gradient(135deg, #fff8e7, #e6f7ff);
+  background: linear-gradient(135deg, #f5cba7, #fae9db);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* 👇 NEW RETRO TITLE STYLE */
 .tools-title {
-  font-size: 36px;
-  font-weight: 900;
-  margin-bottom: 35px;
-  color: #333;
-  text-shadow: 2px 2px #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem; /* Adjusted size */
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 50px;
+  line-height: 1.5;
+
+  /* The "Sticker" Effect */
+  color: #ffffff;                 /* Fill: White */
+  -webkit-text-stroke: 2px black; /* Stroke: Black */
+  text-shadow: 6px 6px 0px #000;  /* Hard Retro Shadow */
+  
+  text-transform: uppercase;
+  
+  /* Entrance Animation */
+  animation: floatIn 0.8s ease-out;
 }
 
 .tools-grid {
   width: 100%;
   max-width: 1200px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  /* Increased min-width to 260px to fit wider retro cards */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 35px;
+}
+
+/* Animation Keyframes */
+@keyframes floatIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
