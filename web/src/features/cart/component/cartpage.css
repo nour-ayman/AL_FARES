@@ -1,0 +1,162 @@
+/* 1. Import the font at the top */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.cart-container {
+  padding: 50px 20px;
+  min-height: 85vh; /* Covers the full screen */
+  
+  /* Background Settings */
+  background-image: url('../../../assets/retro-wave-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  
+  /* 👇 APPLY FONT TO EVERYTHING HERE */
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem; /* This font is big, so we make the base size smaller */
+  line-height: 1.6;
+}
+
+.cart-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+  
+  /* Stroke & Fill Settings */
+  color: white; 
+  -webkit-text-stroke: 2px black;
+  text-shadow: 4px 4px 0px #000;
+}
+
+.empty-cart {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+  -webkit-text-stroke: 1px black;
+  font-size: 1.2rem;
+}
+
+/* Layout */
+.cart-content {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Items List */
+.cart-items {
+  flex: 1;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 6px 6px 0px rgba(0,0,0,1); /* Retro hard shadow */
+  border: 3px solid #000000; /* Thicker border for retro look */
+}
+
+.cart-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.cart-item-info h3 {
+  font-size: 0.9rem; /* Adjusted for this wide font */
+  margin: 0 0 10px 0;
+  color: #000;
+  line-height: 1.4;
+}
+
+.item-price {
+  color: #005bbb;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.cart-item-actions {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.quantity {
+    color: #000;
+    font-size: 0.8rem;
+}
+
+.remove-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: 2px solid black; /* Retro border */
+  padding: 8px 12px;
+  border-radius: 0px; /* Square buttons look more retro */
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive; /* Ensure button keeps font */
+  font-size: 0.6rem;
+  box-shadow: 2px 2px 0px black;
+}
+
+.remove-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px black;
+}
+
+/* Order Summary Box */
+.order-summary {
+  background: white;
+  padding: 25px;
+  border: 3px solid #000000;
+  border-radius: 12px;
+  box-shadow: 8px 8px 0px rgba(0,0,0,1); /* Retro hard shadow */
+  height: fit-content;
+  width: 350px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  font-size: 0.9rem;
+  color: black;
+}
+
+.total-price {
+  color: #27ae60;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  font-size: 0.9rem;
+  font-family: 'Press Start 2P', cursive;
+  border: 3px solid black;
+  border-radius: 0px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px black;
+  margin-top: 10px;
+}
+
+.checkout-btn:hover {
+  background-color: #555;
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px black;
+}
+
+.checkout-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px black;
+}
