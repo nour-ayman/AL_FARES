@@ -8,8 +8,16 @@ import { CartProvider } from './features/cart/hooks/useCart';
 import Navbar from './features/navbar/component/Navbar';
 import LoginForm from './features/auth/component/LoginForm';
 import AboutUs from './features/auth/component/AboutUs';
-import Home from './features/home/component/Home'; 
-import TextbooksPage from './features/products/textbooks/TextbooksPage'; 
+import Home from './features/home/component/Home';
+import TextbooksPage from './features/products/textbooks/TextbooksPage';
+
+// 🔥 Import the Bags Page
+import BagsPage from './features/products/bags/BagsPage';
+
+// 🔥 Added: Import Tools Page
+import ToolsPage from './features/products/tools/ToolsPage';
+
+// Cart Page from your friend's work
 import CartPage from './features/cart/component/CartPage';
 
 function App() {
@@ -31,33 +39,16 @@ function App() {
           <Route path="/home" element={<Home />} />
 
           {/* 4. Category Pages */}
-          <Route 
-            path="/textbooks" 
-            element={<TextbooksPage />} 
-          />
+          <Route path="/textbooks" element={<TextbooksPage />} />
 
-          <Route 
-            path="/cart" 
-            element={<CartPage />} 
-          />
+          {/* Bags Page */}
+          <Route path="/bags" element={<BagsPage />} />
 
-          <Route 
-            path="/bags" 
-            element={
-              <div style={{padding: '100px', textAlign: 'center'}}>
-                <h1>🎒 Bags Page (Coming Soon)</h1>
-              </div>
-            } 
-          />
+          {/* Tools Page */}
+          <Route path="/tools" element={<ToolsPage />} />
 
-          <Route 
-            path="/tools" 
-            element={
-              <div style={{padding: '100px', textAlign: 'center'}}>
-                <h1>📐 Tools Page (Coming Soon)</h1>
-              </div>
-            } 
-          />
+          {/* Cart Page */}
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
       </Router>
     </CartProvider>
