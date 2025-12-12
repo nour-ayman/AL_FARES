@@ -1,11 +1,12 @@
 .home-container {
   width: 100%;       
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   
+
   /* Background */
-  background-image: url('../../../assets/retro-wave-bg.png'); 
+  /* background-image: url('../../../assets/retro-wave-bg.png');  */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
