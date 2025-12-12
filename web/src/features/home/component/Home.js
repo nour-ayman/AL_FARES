@@ -1,14 +1,16 @@
 import React from 'react';
-import CategorySection from './CategorySection'; // The Retro Cards
-import './Home.css'; // Optional container styles
+import CategorySection from './CategorySection'; 
+import './Home.css'; 
 
 const Home = () => {
   return (
     <div className="home-container">
-      {/* Navbar is handled globally in App.js, so we don't put it here! */}
+      {/* Navbar is handled globally in App.js */}
 
       <main>
-        {/* The Main Feature of the Home Page */}
+        <h1 className="home-title">WHAT ARE YOU LOOKING FOR?</h1>
+        
+        {/* The Retro Cards */}
         <CategorySection />
       </main>
     </div>

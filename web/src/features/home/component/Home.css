@@ -1,5 +1,4 @@
 .home-container {
-  /* CHANGE THIS: 100% prevents the scrollbar bug */
   width: 100%;       
   min-height: 90vh;
   display: flex;
@@ -11,9 +10,7 @@
   background-position: center;
   background-repeat: no-repeat;
   
-  /* THE FIX: This command forcefully cuts off side scrolling */
   overflow-x: hidden; 
-  
   margin: 0;
   padding: 0;
 }
@@ -22,6 +19,31 @@ main {
   flex: 1;
   width: 100%;
   display: flex;
+  /* 👇 IMPORTANT CHANGE: Stack title and cards vertically */
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
+  gap: 20px; /* Space between title and cards */
+}
+
+/* 👇 THE NEW TITLE STYLE */
+.home-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.5rem;   /* Nice and big */
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px; /* Extra space below the title */
+  
+  /* The "Sticker" Effect */
+  color: #ffffff;                 /* Fill: White */
+  -webkit-text-stroke: 2px black; /* Stroke: Black */
+  text-shadow: 6px 6px 0px #000;  /* Hard Drop Shadow */
+  
+  /* Optional: Animation */
+  animation: floatIn 0.8s ease-out;
+}
+
+@keyframes floatIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
