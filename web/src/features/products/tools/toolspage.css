@@ -1,0 +1,25 @@
+.tools-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #fff8e7, #e6f7ff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tools-title {
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 35px;
+  color: #333;
+  text-shadow: 2px 2px #fff;
+}
+
+.tools-grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 35px;
+}

@@ -5,8 +5,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './features/navbar/component/Navbar';
 import LoginForm from './features/auth/component/LoginForm';
 import AboutUs from './features/auth/component/AboutUs';
-import Home from './features/home/component/Home'; // <--- Import the new Home page
-import TextbooksPage from './features/products/textbooks/TextbooksPage'; // <--- Added Textbooks Page
+import Home from './features/home/component/Home';
+import TextbooksPage from './features/products/textbooks/TextbooksPage';
+
+// 🔥 Import the Bags Page
+import BagsPage from './features/products/bags/BagsPage';
+
+// 🔥 Added: Import Tools Page
+import ToolsPage from './features/products/tools/ToolsPage';
 
 function App() {
   return (
@@ -21,32 +27,17 @@ function App() {
         {/* 2. The About Us Page */}
         <Route path="/AboutUs" element={<AboutUs />} />
 
-        {/* 3. The Main Home Page (Where your Category Cards are) */}
+        {/* 3. The Main Home Page */}
         <Route path="/home" element={<Home />} />
 
         {/* 4. Category Pages */}
-        <Route 
-          path="/textbooks" 
-          element={<TextbooksPage />} 
-        />
+        <Route path="/textbooks" element={<TextbooksPage />} />
 
-        <Route 
-          path="/bags" 
-          element={
-            <div style={{padding: '100px', textAlign: 'center'}}>
-              <h1>🎒 Bags Page (Coming Soon)</h1>
-            </div>
-          } 
-        />
+        {/* 🔥 Real Bags Page */}
+        <Route path="/bags" element={<BagsPage />} />
 
-        <Route 
-          path="/tools" 
-          element={
-            <div style={{padding: '100px', textAlign: 'center'}}>
-              <h1>📐 Tools Page (Coming Soon)</h1>
-            </div>
-          } 
-        />
+        {/* 🔥 Real Tools Page */}
+        <Route path="/tools" element={<ToolsPage />} />
       </Routes>
     </Router>
   );
