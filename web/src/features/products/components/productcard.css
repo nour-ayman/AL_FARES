@@ -59,3 +59,10 @@
 .add-btn:hover {
   background: #ffca28;
 }
+
+.add-btn.added {
+  background-color: #27ae60; /* Green color for success */
+  color: white;
+  border-color: #27ae60;
+  transform: scale(0.95); /* Slight click effect */
+}
