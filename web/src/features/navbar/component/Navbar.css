@@ -1,20 +1,31 @@
 /* Container for the whole navbar */
 .navbar {
   display: flex;
-  justify-content: space-between; /* Pushes content to edges (Left/Right) */
-  align-items: center;            /* Vertically centers items */
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
-  padding: 10px 40px;             /* Vertical padding 10px, Horizontal 40px */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
-  position: sticky;               /* Optional: sticks to top on scroll */
-  top: 0;
+  
+  /* 👇 1. FLOATING EFFECT LOGIC */
+  width: 90%;              /* Don't span the full width */
+  max-width: 1200px;       /* Stop it from getting too wide on big screens */
+  margin: 20px auto;       /* 20px from top, "auto" centers it horizontally */
+  
+  /* 👇 2. SHAPE & RETRO STYLE */
+  border-radius: 15px;     /* Rounded corners */
+  border: 3px solid black; /* Retro border to match your inputs/cards */
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 1); /* Hard retro shadow */
+  padding: 10px 30px;
+
+  /* 👇 3. STICKY BEHAVIOR */
+  position: sticky; 
+  top: 20px;               /* When scrolling, stick 20px from the top (not 0) */
   z-index: 1000;
 }
 
 /* Logo Styling */
 .navbar-logo {
-  height: 50px;       /* Adjust based on your logo's aspect ratio */
-  width: auto;        /* Keeps the image from distorting */
+  height: 40px;            /* Adjusted slightly to fit the pill shape */
+  width: auto;
   object-fit: contain;
   cursor: pointer;
 }
@@ -22,20 +33,21 @@
 /* Right side container */
 .navbar-links {
   display: flex;
-  gap: 25px;          /* Space between the Home and Cart icons */
+  gap: 25px;
 }
 
 /* Individual Icon Links */
 .nav-icon-link {
-  color: #333333 !important;       /* Dark grey for icons */
+  color: #000000 !important; /* Pure black for retro contrast */
   text-decoration: none;
   display: flex;
   align-items: center;
-  transition: color 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .nav-icon-link:hover {
-  color: #007bff !important;     /* Change to your brand color on hover */
+  transform: scale(1.1); /* Pop effect instead of color change */
+  color: #e74c3c !important; /* Red highlight on hover */
 }
 
 /* Container to hold icon + badge */
@@ -50,16 +62,17 @@
 .cart-badge {
   position: absolute;
   top: -8px;
-  right: -8px;
-  background-color: #e74c3c; /* Red color */
+  right: -10px;
+  background-color: #e74c3c;
   color: white;
-  font-size: 0.75rem;
-  font-weight: bold;
-  width: 18px;
-  height: 18px;
+  font-family: 'Press Start 2P', cursive; /* Use the retro font for numbers */
+  font-size: 0.6rem; /* Smaller font for the pixel look */
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid white;
+  box-shadow: 2px 2px 0px #000; /* Tiny shadow for the badge */
 }
