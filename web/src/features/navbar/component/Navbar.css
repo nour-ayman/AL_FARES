@@ -1,78 +1,122 @@
-/* Container for the whole navbar */
+/* NAVBAR BASE STYLE */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  
-  /* 👇 1. FLOATING EFFECT LOGIC */
-  width: 90%;              /* Don't span the full width */
-  max-width: 1200px;       /* Stop it from getting too wide on big screens */
-  margin: 20px auto;       /* 20px from top, "auto" centers it horizontally */
-  
-  /* 👇 2. SHAPE & RETRO STYLE */
-  border-radius: 15px;     /* Rounded corners */
-  border: 3px solid black; /* Retro border to match your inputs/cards */
-  box-shadow: 6px 6px 0px rgba(0, 0, 0, 1); /* Hard retro shadow */
-  padding: 10px 30px;
 
-  /* 👇 3. STICKY BEHAVIOR */
-  position: sticky; 
-  top: 20px;               /* When scrolling, stick 20px from the top (not 0) */
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  border-radius: 15px;
+  border: 3px solid black;
+  box-shadow: 6px 6px 0 black;
+  padding: 10px 30px;
+  position: sticky;
+  top: 20px;
   z-index: 1000;
 }
 
-/* Logo Styling */
 .navbar-logo {
-  height: 40px;            /* Adjusted slightly to fit the pill shape */
-  width: auto;
-  object-fit: contain;
+  height: 40px;
   cursor: pointer;
 }
 
-/* Right side container */
 .navbar-links {
   display: flex;
   gap: 25px;
 }
 
-/* Individual Icon Links */
+/* ICONS */
 .nav-icon-link {
-  color: #000000 !important; /* Pure black for retro contrast */
-  text-decoration: none;
+  color: black !important;
   display: flex;
   align-items: center;
-  transition: transform 0.2s ease;
+  transition: 0.2s ease;
+  cursor: pointer;
 }
 
 .nav-icon-link:hover {
-  transform: scale(1.1); /* Pop effect instead of color change */
-  color: #e74c3c !important; /* Red highlight on hover */
+  transform: scale(1.1);
+  color: #e74c3c !important;
 }
 
-/* Container to hold icon + badge */
+/* Active RED Search Icon */
+.search-icon-btn.active {
+  color: #e74c3c !important;
+  transform: scale(1.2);
+}
+
+/* CART BADGE */
 .cart-container-icon {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* The Red Number Badge */
 .cart-badge {
   position: absolute;
   top: -8px;
   right: -10px;
-  background-color: #e74c3c;
+  background: #e74c3c;
   color: white;
-  font-family: 'Press Start 2P', cursive; /* Use the retro font for numbers */
-  font-size: 0.6rem; /* Smaller font for the pixel look */
+  font-size: 0.6rem;
+  font-family: 'Press Start 2P';
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: 2px solid white;
-  box-shadow: 2px 2px 0px #000; /* Tiny shadow for the badge */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 0 black;
+}
+
+/* -------------------------- */
+/* 🔥 SEARCH BAR BELOW NAV */
+/* -------------------------- */
+
+.search-area {
+  width: 90%;
+  max-width: 1200px;
+  margin: 10px auto;
+  position: relative;
+}
+
+.search-input-bar {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 14px;
+  font-family: 'Press Start 2P';
+  border: 3px solid black;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 black;
+  outline: none;
+}
+
+.search-dropdown-bar {
+  background: white;
+  border: 3px solid black;
+  box-shadow: 4px 4px 0 black;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 8px 0;
+}
+
+.dropdown-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 12px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;
+}
+
+.dropdown-item img {
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 8px;
+  object-fit: cover;
 }
