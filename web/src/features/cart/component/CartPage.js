@@ -2,9 +2,11 @@ import React from "react";
 // Correct Import Path: Go up 1 level (..) to 'cart', then into 'hooks'
 import { useCart } from "../hooks/useCart"; 
 import "./cartpage.css"; 
+import { useNavigate } from "react-router-dom"; // Added navigate
 
 const CartPage = () => {
   const { cartItems, removeFromCart, totalPrice } = useCart();
+  const navigate = useNavigate(); // Navigation function
 
   return (
     <div className="cart-container">
@@ -44,11 +46,18 @@ const CartPage = () => {
           {/* RIGHT SIDE: The Summary */}
           <div className="order-summary">
             <h2>Summary</h2>
+
             <div className="summary-row">
               <span>Total:</span>
               <span className="total-price">{totalPrice} EGP</span>
             </div>
-            <button className="checkout-btn">Checkout</button>
+
+            <button 
+              className="checkout-btn"
+              onClick={() => navigate("/checkout")} // Go to Checkout Page
+            >
+              Checkout
+            </button>
           </div>
         </div>
       )}
