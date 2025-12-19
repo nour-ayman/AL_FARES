@@ -1,0 +1,37 @@
+/* src/features/home/components/CategorySection.css */
+
+.sectionContainer {
+  width: 100%;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.gridContainer {
+  /* --- 1. MAKE IT WIDE --- */
+  /* Top/Bottom: 20px | Left/Right: 80px */
+  padding: 20px 80px !important;  
+  
+  width: fit-content !important; 
+  min-width: auto !important;
+  max-width: 95vw;
+
+  /* --- 2. LAYOUT --- */
+  display: flex;
+  flex-direction: row !important; 
+  flex-wrap: nowrap !important;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+
+  /* --- 3. STYLE (White Box) --- */
+  /* If you want it transparent, change this to 'transparent' */
+  background: rgba(255, 255, 255, 0.00001) !important; 
+  border: 2px solid rgba(255, 255, 255, 0.00001) !important;
+  border-radius: 40px !important;
+  
+  /* Optional: Add a shadow if you want it to pop */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.00001) !important;
+}

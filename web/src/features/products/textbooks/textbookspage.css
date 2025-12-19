@@ -1,0 +1,55 @@
+/* 1. Import the Retro Font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.products-container {
+  width: 100%;
+  
+  /* Force full height */
+  min-height: 100vh;
+  
+  /* 👇 THE MAGICAL FIX */
+  /* 1. Pull the container UP to the top of the screen (behind the navbar) */
+  margin-top: -120px; 
+  
+  /* 2. Push the content DOWN so it is not hidden behind the navbar */
+  /* 120px (counteract margin) + 50px (original padding) = 170px */
+  padding-top: 170px; 
+  padding-bottom: 150px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  /* Your Gradient */
+  background: linear-gradient(135deg, #2c3e50, #9595b3);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ... keep your title and grid styles the same ... */
+.page-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 50px;
+  line-height: 1.5;
+  color: #ffffff;
+  -webkit-text-stroke: 2px black;
+  text-shadow: 6px 6px 0px #000;
+  text-transform: uppercase;
+  animation: floatIn 0.8s ease-out;
+}
+
+.products-grid {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 35px;
+}
+
+@keyframes floatIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

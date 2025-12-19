@@ -1,0 +1,204 @@
+/* 1. Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.signup-wrapper {
+    /* Global Retro Font */
+    font-family: 'Press Start 2P', cursive;
+    color: #333;
+    
+    /* Full screen height to show global background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* The Main Card */
+.signup-card {
+    width: 100%;
+    max-width: 450px;
+    /* Slightly taller than login card to fit extra input */
+    min-height: 500px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    
+    /* Retro White Box Style */
+    background: #ffffff;
+    border: 4px solid #000;      /* Thick black border */
+    box-shadow: 10px 10px 0px #000; /* Hard shadow */
+    border-radius: 0px;          /* Square corners */
+}
+
+/* Title Styling */
+.retro-title {
+    font-size: 1.8rem; /* Slightly smaller to fit "NEW PLAYER" */
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    
+    /* Sticker Effect */
+    color: #ffffff; 
+    -webkit-text-stroke: 2px black;
+    text-shadow: 4px 4px 0px #000;
+}
+
+.success-msg {
+    color: #27ae60; /* Green */
+}
+
+.demo-text {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #666;
+    margin-bottom: 25px;
+    margin-top: -10px;
+    text-transform: uppercase;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Slightly tighter gap to fit 3 inputs */
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="password"] {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem; /* Smaller font for retro feel */
+    padding: 15px;
+    
+    /* Retro Input Borders */
+    border: 3px solid #000;
+    border-radius: 0;
+    background-color: #f0f0f0;
+    color: #000;
+    outline: none;
+    width: 100%;
+    transition: 0.2s;
+}
+
+input:focus {
+    background-color: #fff;
+    box-shadow: 4px 4px 0px #000;
+    transform: translate(-2px, -2px);
+}
+
+input::placeholder {
+    color: #888;
+}
+
+/* Register Button (Green) */
+.retro-btn {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    padding: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    
+    /* Green Arcade Button */
+    background-color: #27ae60; 
+    color: #ffffff;
+    border: 3px solid #000;
+    border-radius: 0;
+    box-shadow: 4px 4px 0px #000;
+    text-shadow: 2px 2px 0px #000;
+    transition: all 0.1s;
+}
+
+.retro-btn:hover {
+    background-color: #2ecc71; /* Brighter Green */
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #000;
+}
+
+.retro-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #000;
+}
+
+/* Footer & Links */
+.retro-footer {
+    margin-top: 25px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-top: 2px dashed #ccc;
+    padding-top: 20px;
+}
+
+.small-text {
+    font-size: 0.6rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.retro-link {
+    color: #000;
+    text-decoration: none;
+    font-size: 0.7rem;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+}
+
+.retro-link:hover {
+    border-bottom: 2px solid #000;
+}
+
+.retro-link.highlight {
+    color: #007bff;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* Error Message Box */
+.errmsg {
+    background-color: #ffbaba;
+    color: #d8000c;
+    border: 2px solid #d8000c;
+    font-size: 0.6rem;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 4px 4px 0px #000;
+}
+
+.offscreen, .sr-only {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Home Link (Success Screen) */
+.home-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    gap: 10px;
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
+
+.home-link:hover {
+    color: #e74c3c;
+    transform: scale(1.1);
+}
