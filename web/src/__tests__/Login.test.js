@@ -14,10 +14,10 @@ jest.mock('../firebase', () => ({
   auth: {},
 }));
 
-// 3. Helper to wrap component
+// 3. Helper to wrap component (With the Warning Fix Included)
 const MockLogin = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <LoginForm />
     </BrowserRouter>
   );
@@ -33,8 +33,7 @@ describe('LoginForm Component Tests', () => {
   test('renders Login inputs and buttons', () => {
     render(<MockLogin />);
     
-    // We use .toBeTruthy() instead of .toBeInTheDocument()
-    // If the element is found, it is "true". If not, getBy... throws an error anyway.
+    // We use .toBeTruthy() to check existence without extra libraries
     expect(screen.getByPlaceholderText(/EMAIL/i)).toBeTruthy();
     expect(screen.getByPlaceholderText(/PASSWORD/i)).toBeTruthy();
     expect(screen.getByRole('button', { name: /LOGIN/i })).toBeTruthy();
@@ -85,7 +84,6 @@ describe('LoginForm Component Tests', () => {
     fireEvent.click(screen.getByRole('button', { name: /LOGIN/i }));
 
     await waitFor(() => {
-        // This checks if the error text exists on the screen
         expect(screen.getByText(/Invalid credentials/i)).toBeTruthy();
     });
   });
