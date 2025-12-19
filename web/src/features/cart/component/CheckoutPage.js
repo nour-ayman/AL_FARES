@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./checkout.css";
+import { auth, db } from "../../../firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const CheckoutPage = () => {
   const [formData, setFormData] = useState({
@@ -17,9 +19,44 @@ const CheckoutPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Order Confirmed! Thank you for your purchase.");
+
+    const user = auth.currentUser;
+
+    if (!user) {
+      alert("You must be logged in to place an order");
+      return;
+    }
+
+    try {
+      // 🔥 Save order under the logged-in user
+      await addDoc(
+        collection(db, "users", user.uid, "orders"),
+        {
+          ...formData,
+          itemsTotal: 350,
+          deliveryFee: 30,
+          total: 380,
+          createdAt: serverTimestamp(),
+        }
+      );
+
+      alert("Order Confirmed! Thank you for your purchase.");
+
+      // optional reset
+      setFormData({
+        name: "",
+        phone: "",
+        address: "",
+        city: "",
+        payment: "cash",
+      });
+
+    } catch (error) {
+      console.error("Error saving order:", error);
+      alert("Something went wrong. Try again.");
+    }
   };
 
   return (
