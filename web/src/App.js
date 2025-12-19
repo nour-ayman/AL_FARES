@@ -20,6 +20,9 @@ import ToolsPage from './features/products/tools/ToolsPage';
 // Cart Page from your friend's work
 import CartPage from './features/cart/component/CartPage';
 
+// 🔥 Added: Import Checkout Page
+import CheckoutPage from './features/cart/component/CheckoutPage';
+
 function App() {
   return (
     // 2. Wrap the whole app so every page can access the Cart
@@ -49,6 +52,10 @@ function App() {
 
           {/* Cart Page */}
           <Route path="/cart" element={<CartPage />} />
+
+          {/* 🔥 Checkout Page */}
+          <Route path="/checkout" element={<CheckoutPage />} />
+
         </Routes>
       </Router>
     </CartProvider>
