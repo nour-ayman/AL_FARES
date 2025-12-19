@@ -7,46 +7,54 @@
     box-sizing: border-box;
 }
 
-.login-wrapper {
+.signup-wrapper {
+    /* Global Retro Font */
     font-family: 'Press Start 2P', cursive;
     color: #333;
+    
+    /* Full screen height to show global background */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    /* Background comes from global index.css */
 }
 
-.login-card {
+/* The Main Card */
+.signup-card {
     width: 100%;
     max-width: 450px;
-    min-height: 400px;
+    /* Slightly taller than login card to fit extra input */
+    min-height: 500px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2.5rem;
+    
+    /* Retro White Box Style */
     background: #ffffff;
-    border: 4px solid #000;
-    box-shadow: 10px 10px 0px #000;
-    border-radius: 0px;
+    border: 4px solid #000;      /* Thick black border */
+    box-shadow: 10px 10px 0px #000; /* Hard shadow */
+    border-radius: 0px;          /* Square corners */
 }
 
+/* Title Styling */
 .retro-title {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Slightly smaller to fit "NEW PLAYER" */
     text-align: center;
     margin-bottom: 20px;
     line-height: 1.5;
+    
+    /* Sticker Effect */
     color: #ffffff; 
     -webkit-text-stroke: 2px black;
     text-shadow: 4px 4px 0px #000;
 }
 
 .success-msg {
-    font-size: 1.5rem;
-    color: #27ae60;
+    color: #27ae60; /* Green */
 }
 
 .demo-text {
@@ -62,14 +70,17 @@ form {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px; /* Slightly tighter gap to fit 3 inputs */
 }
 
+/* Input Styles */
 input[type="text"],
 input[type="password"] {
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.8rem;
+    font-size: 0.7rem; /* Smaller font for retro feel */
     padding: 15px;
+    
+    /* Retro Input Borders */
     border: 3px solid #000;
     border-radius: 0;
     background-color: #f0f0f0;
@@ -89,22 +100,26 @@ input::placeholder {
     color: #888;
 }
 
+/* Register Button (Green) */
 .retro-btn {
     font-family: 'Press Start 2P', cursive;
     font-size: 1rem;
     padding: 15px;
-    margin-top: 10px;
+    margin-top: 15px;
     cursor: pointer;
-    background-color: #ffd54f; 
-    color: #000;
+    
+    /* Green Arcade Button */
+    background-color: #27ae60; 
+    color: #ffffff;
     border: 3px solid #000;
     border-radius: 0;
     box-shadow: 4px 4px 0px #000;
+    text-shadow: 2px 2px 0px #000;
     transition: all 0.1s;
 }
 
 .retro-btn:hover {
-    background-color: #ffca28;
+    background-color: #2ecc71; /* Brighter Green */
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0px #000;
 }
@@ -114,7 +129,24 @@ input::placeholder {
     box-shadow: 0px 0px 0px #000;
 }
 
-/* Links */
+/* Footer & Links */
+.retro-footer {
+    margin-top: 25px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-top: 2px dashed #ccc;
+    padding-top: 20px;
+}
+
+.small-text {
+    font-size: 0.6rem;
+    line-height: 1.8;
+    color: #555;
+}
+
 .retro-link {
     color: #000;
     text-decoration: none;
@@ -127,41 +159,18 @@ input::placeholder {
     border-bottom: 2px solid #000;
 }
 
-/* 👇 NEW STYLES FOR FOOTER SECTION 👇 */
-.retro-footer {
-    margin-top: 30px;
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    border-top: 2px dashed #ccc; /* Divider line */
-    padding-top: 20px;
-}
-
-.small-text {
-    font-size: 0.6rem;
-    line-height: 1.8;
-    color: #555;
-}
-
 .retro-link.highlight {
-    color: #007bff; /* Blue color for Sign Up */
+    color: #007bff;
     font-weight: bold;
     margin-left: 5px;
 }
 
-.retro-link.highlight:hover {
-    color: #0056b3;
-    border-bottom: 2px solid #0056b3;
-}
-
-/* Error Message */
+/* Error Message Box */
 .errmsg {
     background-color: #ffbaba;
     color: #d8000c;
     border: 2px solid #d8000c;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     padding: 10px;
     margin-bottom: 15px;
     width: 100%;
@@ -177,6 +186,7 @@ input::placeholder {
     overflow: hidden;
 }
 
+/* Home Link (Success Screen) */
 .home-link {
     display: flex;
     flex-direction: column;
