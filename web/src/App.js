@@ -11,17 +11,16 @@ import AboutUs from './features/auth/component/AboutUs';
 import Home from './features/home/component/Home';
 import TextbooksPage from './features/products/textbooks/TextbooksPage';
 
-// 🔥 Import the Bags Page
+// Import Category Pages
 import BagsPage from './features/products/bags/BagsPage';
-
-// 🔥 Added: Import Tools Page
 import ToolsPage from './features/products/tools/ToolsPage';
 
-// Cart Page from your friend's work
+// Cart & Checkout Pages
 import CartPage from './features/cart/component/CartPage';
-
-// 🔥 Added: Import Checkout Page
 import CheckoutPage from './features/cart/component/CheckoutPage';
+
+// NEW IMPORT: Sign Up Form
+import SignUpForm from './features/auth/component/SignUpForm';
 
 function App() {
   return (
@@ -34,26 +33,27 @@ function App() {
         <Routes>
           {/* 1. The Landing Page (Login) */}
           <Route path="/" element={<LoginForm />} />
+          
+          {/* Explicit Login Route */}
+          <Route path="/login" element={<LoginForm />} />
+
+          {/* 🔥 👇 NEW ROUTE: Sign Up Page */}
+          <Route path="/signup" element={<SignUpForm />} />
 
           {/* 2. The About Us Page */}
           <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/about" element={<AboutUs />} />
 
           {/* 3. The Main Home Page */}
           <Route path="/home" element={<Home />} />
 
           {/* 4. Category Pages */}
           <Route path="/textbooks" element={<TextbooksPage />} />
-
-          {/* Bags Page */}
           <Route path="/bags" element={<BagsPage />} />
-
-          {/* Tools Page */}
           <Route path="/tools" element={<ToolsPage />} />
 
-          {/* Cart Page */}
+          {/* 5. Cart & Checkout */}
           <Route path="/cart" element={<CartPage />} />
-
-          {/* 🔥 Checkout Page */}
           <Route path="/checkout" element={<CheckoutPage />} />
 
         </Routes>

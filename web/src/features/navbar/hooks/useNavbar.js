@@ -5,7 +5,7 @@ export const useNavbar = () => {
 
   // Updated list of paths where Navbar is HIDDEN
   // '/' is your Login page, '/AboutUs' is your About page
-  const hiddenPaths = ['/', '/AboutUs'];
+  const hiddenPaths = ['/', '/AboutUs', '/signup'];
 
   const showNavbar = !hiddenPaths.includes(location.pathname);
 

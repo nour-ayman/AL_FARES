@@ -1,6 +1,6 @@
 import './LoginForm.css';
 import { Link } from 'react-router-dom';
-import useLoginForm from '../hooks/useLoginForm'; // adjust path if needed
+import useLoginForm from '../hooks/useLoginForm'; 
 import { AiFillHome } from "react-icons/ai";
 
 const LoginForm = () => {
@@ -9,25 +9,24 @@ const LoginForm = () => {
     return (
         <div className="login-wrapper">
             {success ? (
-                <section>
-                    <h1>You are logged in!</h1>
+                <section className="login-card">
+                    <h1 className="retro-title success-msg">LOGGED IN!</h1>
                     <br />
-                    {/* <p>
-                        <Link to="HomePage">Go to Home</Link>
-                    </p> */}
-
                     <p>
-                        <Link to="/home" style={{ fontSize: "2rem", display: 'flex', justifyContent: 'center' }}>
-                        <AiFillHome />
+                        <Link to="/home" className="home-link">
+                           <AiFillHome size={40} />
+                           <span>HOME</span>
                         </Link>
                     </p>
                 </section>
             ) : (
-                <section>
-                    <h1 style={{ textAlign: 'center', marginBottom: '1rem'}}>AL FARES</h1>
-                    <p style={{ textAlign: 'center', fontSize: '0.8rem', color: '#ccc', marginBottom: '10px', marginTop: '-10px' }}>
-                        Demo / Test Version
+                <section className="login-card">
+                    <h1 className="retro-title">AL FARES</h1>
+                    
+                    <p className="demo-text">
+                        Demo Version
                     </p>  
+                    
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
 
                     <form onSubmit={handleSubmit}>
@@ -35,7 +34,7 @@ const LoginForm = () => {
                         <input
                             type="text"
                             id="username"
-                            placeholder="Username"
+                            placeholder="USERNAME"
                             ref={userRef}
                             autoComplete="off"
                             onChange={(e) => setUser(e.target.value)}
@@ -50,14 +49,21 @@ const LoginForm = () => {
                             onChange={(e) => setPwd(e.target.value)}
                             value={pwd}
                             required
-                            placeholder="Password"
+                            placeholder="PASSWORD"
                         />
-                        <button>Login</button>
+                        <button className="retro-btn">LOGIN</button>
                     </form>
 
-                    <span className="line" style={{display: 'flex', justifyContent: 'center', marginTop: '1rem'}}>
-                        <Link to="AboutUs" style={{marginLeft: '5px', fontWeight: 'bold'}}>About Us</Link>
-                    </span>
+                    <div className="retro-footer">
+                        <p className="small-text">
+                            Don't have an account? <br/>
+                            <Link to="/signup" className="retro-link highlight">SIGN UP</Link>
+                        </p>
+
+                        <span className="line">
+                            <Link to="/AboutUs" className="retro-link">ABOUT US</Link>
+                        </span>
+                    </div>
                 </section>
             )}
         </div>
