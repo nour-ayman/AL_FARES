@@ -1,24 +1,34 @@
-// 1. THIS IS THE MISSING IMPORT
-// It teaches Jest what "toBeInTheDocument" means
-import '@testing-library/jest-dom'; 
-
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
+// 1. Mock Firebase Auth (Because App loads Login immediately)
+jest.mock('firebase/auth', () => ({
+  getAuth: jest.fn(),
+  signInWithEmailAndPassword: jest.fn(),
+  createUserWithEmailAndPassword: jest.fn(),
+}));
+
+// 2. Mock Firestore (Because App might load SignUp)
+jest.mock('firebase/firestore', () => ({
+  getFirestore: jest.fn(),
+  doc: jest.fn(),
+  setDoc: jest.fn(),
+}));
+
+// 3. Mock the local firebase config
+jest.mock('./firebase', () => ({
+  auth: {},
+  db: {},
+}));
+
 test('renders initial entry page (Login)', () => {
-  // 1. Render the App
+  // 1. Render the whole App
   render(<App />);
 
   // 2. Find the Login button
-  // using getByRole is more precise than getByText
+  // We use the standard .toBeTruthy() to check existence
   const loginButton = screen.getByRole('button', { name: /login/i });
 
-  // 3. Assert it exists
-  expect(loginButton).toBeInTheDocument();
+  // 3. Assert it exists (Green Light)
+  expect(loginButton).toBeTruthy();
 });
-//--------------------------------------------//
-// el comment da lel team el maaya
-//--------------------------------------------//
-// do we test the login only?
-// Short answer: Yes, for right now.
-// But technically, no, it is testing the "App Start Up".
