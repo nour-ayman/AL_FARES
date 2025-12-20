@@ -12,8 +12,7 @@ jobs:
     
     defaults:
       run:
-        working-directory: ./web
-
+        working-directory: ./web  # 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -26,13 +25,14 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      
       - name: Lint Code
         run: npm run lint
 
       - name: Run Tests
         run: npm test
         env:
-          CI: true
+          CI: true  
 
       - name: Build Project
         run: npm run build
