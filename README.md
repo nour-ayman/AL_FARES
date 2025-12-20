@@ -38,5 +38,5 @@ There you will find detailed documentation including:
 
 ##  The Team
 * **Nour El-Dine Ayman (Wezza)** - *Lead Developer + Frontend Engineer*
-* **Assem** - *Frontend Engineer*
-* **Hamza** - *Backend & Database Engineer*
+* **Hamza** - *Frontend Engineer*
+* **Assem** - *Backend & Database Engineer*
