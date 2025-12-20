@@ -2,8 +2,16 @@ import React, { useState } from "react";
 import "./checkout.css";
 import { auth, db } from "../../../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { useCart } from "../hooks/useCart"; // 👈 IMPORT THE HOOK
 
 const CheckoutPage = () => {
+  // 1. Get the actual cart data
+  const { cartItems, totalPrice } = useCart();
+  
+  // Define fees
+  const deliveryFee = 30;
+  const finalTotal = totalPrice + deliveryFee;
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -29,22 +37,29 @@ const CheckoutPage = () => {
       return;
     }
 
+    if (cartItems.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
     try {
-      // 🔥 Save order under the logged-in user
+      // 🔥 Save REAL order data under the logged-in user
       await addDoc(
         collection(db, "users", user.uid, "orders"),
         {
           ...formData,
-          itemsTotal: 350,
-          deliveryFee: 30,
-          total: 380,
+          items: cartItems, // Save the actual items list
+          itemsTotal: totalPrice,
+          deliveryFee: deliveryFee,
+          total: finalTotal,
+          status: "Pending", // Good for Admin Dashboard later
           createdAt: serverTimestamp(),
         }
       );
 
       alert("Order Confirmed! Thank you for your purchase.");
 
-      // optional reset
+      // Reset form
       setFormData({
         name: "",
         phone: "",
@@ -52,6 +67,9 @@ const CheckoutPage = () => {
         city: "",
         payment: "cash",
       });
+
+      // Note: If you want to empty the cart here, 
+      // you need to add a "clearCart" function to your CartProvider first.
 
     } catch (error) {
       console.error("Error saving order:", error);
@@ -130,15 +148,16 @@ const CheckoutPage = () => {
           </label>
         </div>
 
+        {/* 🔥 DYNAMIC SUMMARY SECTION */}
         <div className="checkout-summary">
           <h2>Order Summary</h2>
-          <p>Items Total: <strong>350 EGP</strong></p>
-          <p>Delivery Fee: <strong>30 EGP</strong></p>
-          <p className="checkout-total">Total: <strong>380 EGP</strong></p>
+          <p>Items Total: <strong>{totalPrice} EGP</strong></p>
+          <p>Delivery Fee: <strong>{deliveryFee} EGP</strong></p>
+          <p className="checkout-total">Total: <strong>{finalTotal} EGP</strong></p>
         </div>
 
         <button className="checkout-btn" type="submit">
-          Confirm Order
+          Confirm Order ({finalTotal} EGP)
         </button>
       </form>
     </div>
